@@ -1,7 +1,8 @@
 const inputBox=document.getElementById('input-box');
 const listContainer=document.getElementById('list-container');
 const inputBoxError=document.getElementById('input-box-error');
-const body=document.querySelector('body');
+const addBtn=document.querySelector('#add-btn');
+addBtn.addEventListener('click',addTask);
 function addTask(){
     if(inputBox.value==='')
         {
@@ -20,11 +21,6 @@ function addTask(){
             inputBox.value='';
             saveExistData();
     }
-inputBox.addEventListener('input', function(e) {
-    if (inputErrorBox.innerHTML !== '') {
-        inputErrorBox.innerHTML = '';
-    }
-}, false);
 listContainer.addEventListener("click",function(e){
     if(e.target.tagName==='LI'){
         e.target.classList.toggle('checked');
@@ -35,12 +31,10 @@ listContainer.addEventListener("click",function(e){
         saveExistData();
     }
 },false);
-body.addEventListener('load',function(e){
-    listContainer.innerHTML=localStorage.getItem("data");
-},false)
+
 function saveExistData(){
      localStorage.setItem("data",listContainer.innerHTML);   
 }
 document.addEventListener('DOMContentLoaded', function(e) {
-    listContainer.innerHTML = localStorage.getItem("data") || ''; // Load data from local storage
+    listContainer.innerHTML = localStorage.getItem("data") || ''; 
 }, false);

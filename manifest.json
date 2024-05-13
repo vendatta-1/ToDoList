@@ -1,0 +1,16 @@
+{
+    "name":"To Do List",
+    "version":"1.0.3",
+    "description":"this is an extenstion to help to organize daily jobs ",
+    "manifest_version":3,
+    "author":"abdullah khalid",
+    "action":{
+        "default_popup":"index.html",
+           "default_title":"To-Do List"
+    },
+    "icons":{
+        "16":"icon.png",
+        "48":"icon.png",
+        "128":"icon.png"
+    }
+}
